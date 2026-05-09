@@ -1,26 +1,24 @@
-<!-- components/navbar.html -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <div class="flex items-center gap-x-3">
-            <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-2xl">🐾</div>
-            <a href="index.html" class="font-bold text-2xl tracking-tighter">ReviewPetStuff</a>
-        </div>
+        <a href="index.html" class="flex items-center gap-2 text-2xl font-bold tracking-tight">
+            <span class="text-emerald-500">Review</span>PetStuff
+        </a>
         
-        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
-            <a href="dogs.html" class="hover:text-emerald-400 transition-colors">Dogs</a>
-            <a href="cats.html" class="hover:text-emerald-400 transition-colors">Cats</a>
-            <a href="#" class="hover:text-emerald-400 transition-colors">Raw Diets</a>
-            <a href="about.html" class="hover:text-emerald-400 transition-colors">About</a>
+        <div class="flex items-center gap-8 text-sm font-medium">
+            <a href="index.html" class="hover:text-emerald-400 transition">Home</a>
+            <a href="dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
+            <a href="cats.html" class="hover:text-emerald-400 transition">Cats</a>
+            <a href="about.html" class="hover:text-emerald-400 transition">About</a>
+            <a href="disclosure.html" class="hover:text-emerald-400 transition">Disclosure</a>
         </div>
 
-        <div class="relative w-72">
-            <input type="text" id="searchInput" placeholder="Search reviews..." 
-                   class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-full py-2.5 px-5 pl-10 w-full text-sm focus:outline-none">
-            <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-zinc-500"></i>
+        <div class="hidden md:flex items-center gap-3">
+            <a href="dogs.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold transition flex items-center gap-2">
+                <i class="fas fa-dog"></i> Dogs
+            </a>
+            <a href="cats.html" class="border border-zinc-700 hover:border-emerald-400 px-5 py-2.5 rounded-2xl text-sm font-semibold transition">
+                <i class="fas fa-cat"></i> Cats
+            </a>
         </div>
     </div>
 </nav>
