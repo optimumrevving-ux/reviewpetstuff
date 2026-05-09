@@ -1,91 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReviewPetStuff - Honest Dog & Cat Product Reviews</title>
+    <meta name="description" content="Honest reviews of the best dog food, raw diets, cat food, litter & pet products. Real testing. No fluff. Updated May 2026.">
+    <title>ReviewPetStuff • Honest Dog & Cat Product Reviews 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
-                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; 
-        }
+        .tail-container { @apply bg-zinc-950 text-zinc-100; }
+        .emerald-gradient { background: linear-gradient(90deg, #10b981, #14b8a6); }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col">
-    
-    <div id="navbar"></div>
+<body class="tail-container font-sans">
 
-    <!-- Hero -->
-    <header class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Honest Reviews.<br><span class="text-emerald-400">Real Results.</span></h1>
-            <p class="text-xl text-zinc-300 max-w-xl mx-auto mb-10">Independent testing of dog food, raw diets, cat litter, toys & more.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="dogs.html" class="bg-emerald-500 hover:bg-emerald-600 px-10 py-4 rounded-2xl font-semibold text-lg">Browse Dog Reviews</a>
-                <a href="cats.html" class="border border-white/60 hover:bg-white/10 px-10 py-4 rounded-2xl font-semibold text-lg">Browse Cat Reviews</a>
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold tracking-tight">
+                <span class="text-emerald-500">Review</span>PetStuff
+            </a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-emerald-400 font-semibold">Home</a>
+                <a href="dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
+                <a href="cats.html" class="hover:text-emerald-400 transition">Cats</a>
+                <a href="about.html" class="hover:text-emerald-400 transition">About</a>
+                <a href="disclosure.html" class="hover:text-emerald-400 transition">Disclosure</a>
             </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center">
+        <div class="inline-flex items-center gap-2 bg-emerald-950 text-emerald-400 text-xs font-semibold tracking-widest px-6 py-3 rounded-3xl mb-6">
+            <i class="fas fa-shield-alt"></i> INDEPENDENT • HONEST • REAL TESTING
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+            Honest Pet Product<br>Reviews That Actually Help
+        </h1>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+            We test dog food, raw diets, cat litter, toys & more with real pets. 
+            No sponsorships. No fluff. Just straight answers.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <a href="dogs.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition text-lg">
+                <i class="fas fa-dog"></i> Best Dog Products
+            </a>
+            <a href="cats.html" class="border border-zinc-700 hover:border-emerald-400 px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition text-lg">
+                <i class="fas fa-cat"></i> Best Cat Products
+            </a>
         </div>
     </header>
 
-<<<<<<< HEAD
-    <!-- Latest Reviews -->
-=======
->>>>>>> dc20833d711c5ba1b96531c7d32329462e4d78bf
-    <section class="py-20 bg-zinc-900 flex-1">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold tracking-tighter mb-12">Latest Reviews</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="reviewGrid"></div>
+    <!-- FEATURED REVIEWS -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="flex items-baseline justify-between mb-10">
+            <h2 class="text-3xl font-semibold">Featured Reviews</h2>
+            <a href="dogs.html" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-2 text-sm font-medium">
+                All Dog Reviews <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Hill’s Example -->
+            <a href="reviews/hills-science-diet-adult-1-6-review.html" class="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-emerald-400 transition">
+                <div class="h-2 emerald-gradient"></div>
+                <div class="p-6">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs bg-emerald-950 text-emerald-400 px-3 py-1 rounded-2xl">DOG FOOD</span>
+                        <div class="flex text-amber-400">★★★★☆</div>
+                    </div>
+                    <h3 class="font-semibold text-xl group-hover:text-emerald-400 transition">Hill’s Science Diet Adult 1-6</h3>
+                    <p class="text-zinc-400 text-sm mt-3 line-clamp-3">Vet-recommended kibble tested for digestibility and long-term health.</p>
+                    <div class="mt-6 text-xs text-emerald-400 font-medium">Read full review →</div>
+                </div>
+            </a>
+
+            <!-- Add more featured cards here as you publish new reviews -->
+            <!-- Example 2 -->
+            <a href="#" class="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-emerald-400 transition">
+                <div class="h-2 emerald-gradient"></div>
+                <div class="p-6">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs bg-emerald-950 text-emerald-400 px-3 py-1 rounded-2xl">RAW DIET</span>
+                        <div class="flex text-amber-400">★★★★★</div>
+                    </div>
+                    <h3 class="font-semibold text-xl group-hover:text-emerald-400 transition">Best Raw Dog Food Base Mixes</h3>
+                    <p class="text-zinc-400 text-sm mt-3 line-clamp-3">Complete guide to the top performing raw diet mixes.</p>
+                    <div class="mt-6 text-xs text-emerald-400 font-medium">Read full review →</div>
+                </div>
+            </a>
+
+            <!-- Example 3 -->
+            <a href="#" class="group bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-emerald-400 transition">
+                <div class="h-2 emerald-gradient"></div>
+                <div class="p-6">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs bg-emerald-950 text-emerald-400 px-3 py-1 rounded-2xl">CAT LITTER</span>
+                        <div class="flex text-amber-400">★★★★★</div>
+                    </div>
+                    <h3 class="font-semibold text-xl group-hover:text-emerald-400 transition">Best Cat Litter Boxes 2026</h3>
+                    <p class="text-zinc-400 text-sm mt-3 line-clamp-3">Tested and ranked for odor control and ease of cleaning.</p>
+                    <div class="mt-6 text-xs text-emerald-400 font-medium">Read full review →</div>
+                </div>
+            </a>
         </div>
     </section>
 
-    <div id="footer"></div>
+    <!-- TRUST BAR -->
+    <div class="bg-zinc-900 py-8 border-t border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-sm text-zinc-400">
+            <div class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> Real Pet Testing</div>
+            <div class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> No Sponsored Bias</div>
+            <div class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> Updated Weekly</div>
+            <div class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> Transparent Scoring</div>
+        </div>
+    </div>
+
+    <!-- QUICK LINKS TO HUBS -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-8">
+            <a href="dogs.html" class="group bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl p-12 transition">
+                <div class="text-6xl mb-6">🐶</div>
+                <h2 class="text-4xl font-bold mb-4">Dog Products</h2>
+                <p class="text-zinc-400 text-lg">Best dog food, raw diets, toys, dental care & more</p>
+                <span class="mt-8 inline-flex items-center gap-2 text-emerald-400 font-medium">Explore All Dog Reviews →</span>
+            </a>
+
+            <a href="cats.html" class="group bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl p-12 transition">
+                <div class="text-6xl mb-6">🐱</div>
+                <h2 class="text-4xl font-bold mb-4">Cat Products</h2>
+                <p class="text-zinc-400 text-lg">Best cat food, litter, litter boxes & enrichment</p>
+                <span class="mt-8 inline-flex items-center gap-2 text-emerald-400 font-medium">Explore All Cat Reviews →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-900 border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            © 2026 ReviewPetStuff • Honest pet product reviews • 
+            <a href="disclosure.html" class="hover:text-zinc-300">Affiliate Disclosure</a>
+        </div>
+    </footer>
 
     <script>
-<<<<<<< HEAD
-        // Load components
-        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
-        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
-
-        // Real reviews from your sitemap
-        const reviews = [
-            {title: "The Ultimate Guide to Choosing the Right Dog Food", url: "dogs.html", rating: "4.8", category: "Dog Food"},
-            {title: "Best Raw Diet Base Mixes 2025 Reviews", url: "dogs.html", rating: "4.9", category: "Raw Diets"},
-            {title: "Grain-Free Cat Food Really a Deep Dive", url: "cats.html", rating: "4.6", category: "Cat Food"},
-            {title: "Best 5 Cat Litter Boxes of 2026 Reviewed & Ranked", url: "cats.html", rating: "4.7", category: "Cat Gear"},
-            {title: "The Best Dog Toys for Every Breed and Play Style", url: "dogs.html", rating: "4.5", category: "Dog Toys"},
-            {title: "Best Canned Dog Foods", url: "dogs.html", rating: "4.4", category: "Dog Food"}
-        ];
-
-        document.getElementById('reviewGrid').innerHTML = reviews.map(r => `
-            <a href="${r.url}" class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-emerald-500 transition-all group">
-                <div class="h-56 bg-zinc-800 flex items-center justify-center text-6xl">🐾</div>
-                <div class="p-6">
-                    <span class="inline-block px-3 py-1 text-xs bg-emerald-900 text-emerald-400 rounded-full mb-3">${r.category}</span>
-                    <h3 class="font-semibold text-lg leading-tight mb-2 group-hover:text-emerald-400">${r.title}</h3>
-                    <div class="text-emerald-400 font-medium">${r.rating} ★</div>
-                </div>
-=======
-        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
-        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
-
-        // Latest reviews from your sitemap
-        const reviews = [
-            {title: "The Ultimate Guide to Choosing the Right Dog Food", url: "dogs.html", rating: "4.8"},
-            {title: "Best Raw Diet Base Mixes 2025", url: "dogs.html", rating: "4.9"},
-            {title: "Grain-Free Cat Food Deep Dive", url: "cats.html", rating: "4.6"},
-        ];
-
-        document.getElementById('reviewGrid').innerHTML = reviews.map(r => `
-            <a href="${r.url}" class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-emerald-500 transition-all">
-                <h3 class="font-semibold text-lg mb-2">${r.title}</h3>
-                <span class="text-emerald-400">${r.rating} ★</span>
->>>>>>> dc20833d711c5ba1b96531c7d32329462e4d78bf
-            </a>
-        `).join('');
+        console.log('%c✅ index.html homepage loaded successfully', 'color:#10b981; font-weight:bold');
     </script>
 </body>
 </html>
