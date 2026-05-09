@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog Care Reviews | ReviewPetStuff</title>
-  <meta name="description" content="Honest reviews of dog food, raw diets, treats & gear.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Reviews - ReviewPetStuff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&display=swap');
+        .tail-container { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 font-sans">
+<body class="tail-container bg-zinc-950 text-zinc-200">
+    <!-- Navbar (same as index) -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">🐾</div>
+                <a href="index.html" class="font-bold text-2xl tracking-tighter">ReviewPetStuff</a>
+            </div>
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-emerald-400">Home</a>
+                <a href="dogs.html" class="text-emerald-400">Dogs</a>
+                <a href="cats.html" class="nav-link hover:text-emerald-400">Cats</a>
+                <a href="#" class="nav-link hover:text-emerald-400">Raw Diets</a>
+                <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
+            </div>
+            <div class="flex items-center gap-x-4">
+                <input type="text" id="search" placeholder="Search dog reviews..." 
+                       class="bg-zinc-800 border border-zinc-700 focus:border-emerald-500 rounded-full py-2 px-5 pl-10 w-64 text-sm">
+                <i class="fa-solid fa-magnifying-glass absolute ml-4 text-zinc-500"></i>
+            </div>
+        </div>
+    </nav>
 
-  <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="/" class="text-3xl font-bold text-emerald-400">reviewpetstuff</a>
-      <div class="flex gap-8 text-sm font-medium">
-        <a href="index.html" class="hover:text-emerald-400">Home</a>
-        <a href="cats.html" class="hover:text-emerald-400">Cat Care</a>
-      </div>
-    </div>
-  </nav>
+    <header class="bg-gradient-to-br from-zinc-900 to-black py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4">Dog Product Reviews</h1>
+            <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Raw diets, kibble, toys, dental care — tested by real dogs and reviewed honestly.</p>
+        </div>
+    </header>
 
-  <header class="bg-gradient-to-br from-amber-900 to-orange-950 py-20 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Dog Care Reviews</h1>
-      <p class="text-2xl text-zinc-400">Raw diets, kibble, air-dried, canned food & more — thoroughly tested</p>
-    </div>
-  </header>
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="dogGrid"></div>
+    </section>
 
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-10">Latest Dog Reviews</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Add your dog review cards here using the template style -->
-    </div>
-  </div>
+    <script>
+        const dogReviews = [
+            { title: "The Ultimate Guide to Choosing the Right Dog Food", url: "#", rating: 4.8, category: "Dog Food", date: "May 9, 2026" },
+            { title: "Best Raw Diet Base Mixes 2025 Reviews", url: "#", rating: 4.9, category: "Raw Feeding", date: "Sep 11, 2025" },
+            { title: "The Best Dog Toys for Every Breed and Play Style", url: "#", rating: 4.5, category: "Toys", date: "May 9, 2026" },
+            { title: "Best Dried Dog Food", url: "#", rating: 4.3, category: "Dog Food", date: "Sep 4, 2025" },
+            { title: "Blue Buffalo Small Breed Dog Food Review", url: "#", rating: 4.2, category: "Dog Food", date: "Jun 14, 2025" },
+            { title: "Hills Science Diet Adult 1-6 Review", url: "#", rating: 4.6, category: "Dog Food", date: "Jun 14, 2025" },
+            // Add more from sitemap as needed
+        ];
 
+        function renderDogs() {
+            document.getElementById('dogGrid').innerHTML = dogReviews.map(r => `
+                <a href="${r.url}" class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="h-52 bg-zinc-800 flex items-center justify-center text-6xl">🐶</div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-xs uppercase tracking-widest bg-emerald-900 text-emerald-400 px-3 py-1 rounded-full">${r.category}</span>
+                            <span class="text-emerald-400 font-medium">${r.rating} ★</span>
+                        </div>
+                        <h3 class="font-semibold text-lg leading-tight mb-2 group-hover:text-emerald-400">${r.title}</h3>
+                        <p class="text-xs text-zinc-500">${r.date}</p>
+                    </div>
+                </a>
+            `).join('');
+        }
+        window.onload = renderDogs;
+    </script>
+
+    <!-- Footer (same as index.html) -->
+    <!-- Paste the full footer from index.html here -->
 </body>
 </html>
