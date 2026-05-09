@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="REPLACE WITH UNIQUE META DESCRIPTION UNDER 160 CHARS">
-    <title>REPLACE WITH KEYWORD-RICH TITLE | ReviewPetStuff</title>
-    <link rel="canonical" href="https://reviewpetstuff.com/reviews/PAGE-SLUG.html">
+    <meta name="description" content="Honest review of [PRODUCT NAME] with real testing notes, pros/cons, star rating and buying advice. Updated 2026.">
+    <title>[PRODUCT NAME] Review 2026 • Honest Rating | ReviewPetStuff</title>
+    <link rel="canonical" href="https://reviewpetstuff.com/reviews/[slug].html">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
@@ -14,66 +14,18 @@
         .star { color: #fbbf24; }
     </style>
 </head>
-<body class="tail-container font-sans">
+<body class="tail-container font-sans" data-product-slug="hills-science-diet-adult-1-6">
 
-    <!-- NAVBAR -->
     <div id="navbar"></div>
 
-    <!-- BREADCRUMBS -->
-    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-zinc-500 border-b border-zinc-800">
-        <a href="../index.html" class="hover:text-emerald-400">Home</a> →
-        <a href="../dogs.html" class="hover:text-emerald-400">Dogs</a> →
-        <span class="text-emerald-400">[Category]</span>
-    </div>
+    <!-- BREADCRUMBS + MAIN CONTENT (same as before) -->
+    <!-- ... keep your existing main content ... -->
 
-    <div class="max-w-7xl mx-auto px-6 pt-12 pb-24">
-        <div class="grid lg:grid-cols-12 gap-12">
+    <!-- MID & BOTTOM CTAs will be auto-filled by JS -->
 
-            <!-- MAIN CONTENT -->
-            <article class="lg:col-span-8 prose prose-invert max-w-none">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-xs font-semibold bg-emerald-950 text-emerald-400 px-4 py-2 rounded-3xl">[CATEGORY TAG]</span>
-                    <span class="text-xs text-zinc-500">Last Updated: May 9, 2026</span>
-                </div>
-
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-none mb-8">[Full Product Name] Review 2026</h1>
-
-                <!-- Star Rating -->
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="flex text-4xl star">★★★★☆</div>
-                    <div>
-                        <span class="text-3xl font-semibold text-emerald-400">9.4</span>
-                        <span class="text-zinc-400">/ 10</span>
-                    </div>
-                </div>
-
-                <!-- HERO IMAGE -->
-                <img src="../images/products/[slug].jpg" alt="[Product Name] - honest review" class="w-full rounded-3xl mb-12" loading="lazy">
-
-                <!-- CONTENT GOES HERE -->
-
-                <!-- FAQ SECTION (for FAQ schema) -->
-                <section class="my-16">
-                    <h2 class="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-                    <details class="mb-4">
-                        <summary class="cursor-pointer font-medium">Is this product good for puppies?</summary>
-                        <p class="mt-2 text-zinc-400">Answer here...</p>
-                    </details>
-                    <!-- Add more FAQs -->
-                </section>
-            </article>
-
-            <!-- SIDEBAR -->
-            <aside class="lg:col-span-4 space-y-8">
-                <!-- Quick Facts + Related + CTA -->
-            </aside>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
     <div id="footer"></div>
 
-    <!-- Component Loader -->
+    <!-- Component Loader + Smart Affiliate Loader -->
     <script>
         async function loadComponent(id, file) {
             try {
@@ -82,41 +34,38 @@
                 document.getElementById(id).innerHTML = html;
             } catch (e) { console.error(`Failed to load ${file}`); }
         }
+
+        async function loadAffiliateLinks() {
+            const slug = document.body.getAttribute('data-product-slug');
+            if (!slug) return;
+
+            try {
+                const res = await fetch('../products.json');
+                const products = await res.json();
+                const product = products[slug];
+                if (!product) return;
+
+                // Update both CTAs
+                document.querySelectorAll('#mid-cta, #bottom-cta').forEach(link => {
+                    if (product.amazon) {
+                        link.href = product.amazon;
+                        link.innerHTML = `<i class="fas fa-shopping-cart"></i> Check Best Price on Amazon`;
+                    }
+                });
+            } catch (e) {
+                console.error("Could not load products.json");
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             loadComponent('navbar', '../components/navbar.html');
             loadComponent('footer', '../components/footer.html');
+            loadAffiliateLinks();
         });
     </script>
 
-    <!-- FULL SEO SCHEMA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Review",
-      "name": "[Product Name] Review",
-      "reviewBody": "Honest review summary here...",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "9.4",
-        "bestRating": "10"
-      },
-      "itemReviewed": {
-        "@type": "Product",
-        "name": "[Product Name]",
-        "image": "https://reviewpetstuff.com/images/products/[slug].jpg",
-        "description": "Product description"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "ReviewPetStuff"
-      },
-      "datePublished": "2026-05-09",
-      "dateModified": "2026-05-09"
-    }
-    </script>
-
     <script>
-        console.log('%c✅ SEO-optimized review template loaded', 'color:#10b981; font-weight:bold');
+        console.log('%c✅ Review template with smart affiliate system loaded', 'color:#10b981; font-weight:bold');
     </script>
 </body>
 </html>
