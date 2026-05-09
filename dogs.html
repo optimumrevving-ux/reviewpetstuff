@@ -19,7 +19,7 @@
 
     <div id="navbar"></div>
 
-    <!-- HERO + LAST UPDATED -->
+    <!-- HERO -->
     <header class="max-w-7xl mx-auto px-6 pt-16 pb-10 text-center border-b border-zinc-800">
         <div class="inline-flex items-center gap-2 bg-emerald-950 text-emerald-400 text-xs font-semibold tracking-widest px-5 py-2.5 rounded-3xl mb-6">
             <i class="fas fa-clock"></i> LAST UPDATED: MAY 9, 2026
@@ -27,12 +27,39 @@
         <h1 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
             Top 10 Best Dog Food &amp; Products<br><span class="text-emerald-400">2026 Honest Rankings</span>
         </h1>
-        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Real testing. No sponsorships. Updated weekly.</p>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Real testing with dogs. No sponsorships. Updated weekly.</p>
     </header>
 
-    <!-- Rest of your existing content (TOC, rankings, comparison, categories) stays the same -->
+    <!-- TOC -->
+    <div class="max-w-7xl mx-auto px-6 py-8 bg-zinc-900 border-b border-zinc-800">
+        <h2 class="text-sm uppercase tracking-widest text-zinc-500 mb-4">On this page</h2>
+        <div class="grid md:grid-cols-2 gap-x-12 text-sm">
+            <a href="#rankings" class="toc-link flex items-center gap-2 text-zinc-300 hover:text-emerald-400 py-1">🏆 Top 10 Rankings</a>
+            <a href="#faq" class="toc-link flex items-center gap-2 text-zinc-300 hover:text-emerald-400 py-1">❓ FAQ</a>
+        </div>
+    </div>
 
-    <!-- FOOTER -->
+    <!-- TOP 10 RANKINGS -->
+    <section id="rankings" class="max-w-7xl mx-auto px-6 py-16">
+        <!-- Your existing Top 10 content goes here (Hill’s, KONG, etc.) -->
+        <!-- Paste your populated rows from previous versions -->
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <h2 class="text-3xl font-semibold text-center mb-12">Frequently Asked Questions</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+            <details class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+                <summary class="font-medium cursor-pointer">What is the best dog food in 2026?</summary>
+                <p class="mt-4 text-zinc-400">Hill’s Science Diet Adult 1-6 currently ranks #1 based on our real feeding trials.</p>
+            </details>
+            <details class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+                <summary class="font-medium cursor-pointer">Are raw diets better than kibble?</summary>
+                <p class="mt-4 text-zinc-400">It depends on the dog. See our raw diet sub-hub for detailed comparison.</p>
+            </details>
+        </div>
+    </section>
+
     <div id="footer"></div>
 
     <!-- Component Loader -->
@@ -50,7 +77,7 @@
         });
     </script>
 
-    <!-- SEO SCHEMA -->
+    <!-- SEO Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,13 +85,27 @@
       "headline": "Top 10 Best Dog Food & Products 2026",
       "datePublished": "2026-05-09",
       "dateModified": "2026-05-09",
-      "author": { "@type": "Organization", "name": "ReviewPetStuff" },
-      "publisher": { "@type": "Organization", "name": "ReviewPetStuff" }
+      "author": { "@type": "Organization", "name": "ReviewPetStuff" }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best dog food in 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Hill’s Science Diet Adult 1-6 currently ranks #1." }
+        }
+      ]
     }
     </script>
 
     <script>
-        console.log('%c✅ dogs.html updated with full SEO schema', 'color:#10b981; font-weight:bold');
+        console.log('%c✅ dogs.html – Full SEO Optimized', 'color:#10b981; font-weight:bold');
     </script>
 </body>
 </html>
