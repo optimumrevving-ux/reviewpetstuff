@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReviewPetStuff • Honest Pet Product Reviews 2026</title>
-  <meta name="description" content="Real tests. No fluff. Honest reviews of dog food, raw diets, cat litter & pet products.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewPetStuff - Honest Dog & Cat Product Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .hero-bg { 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
+                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; 
+        }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 font-sans">
+<body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col">
+    
+    <div id="navbar"></div>
 
-  <!-- Navigation -->
-  <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="index.html" class="text-3xl font-bold text-emerald-400">reviewpetstuff</a>
-      <div class="flex gap-8 text-sm font-medium">
-        <a href="dogs.html" class="hover:text-emerald-400 transition">Dog Care</a>
-        <a href="cats.html" class="hover:text-emerald-400 transition">Cat Care</a>
-        <a href="about.html" class="hover:text-emerald-400 transition">About</a>
-        <a href="disclosure.html" class="hover:text-emerald-400 transition">Disclosure</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="bg-gradient-to-br from-zinc-900 to-emerald-950 py-32 text-center">
-    <div class="max-w-5xl mx-auto px-6">
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-        Honest Pet Reviews.<br>
-        <span class="text-emerald-400">Real Tests Only.</span>
-      </h1>
-      <p class="text-2xl text-zinc-400 max-w-2xl mx-auto mb-12">
-        Unbiased reviews of dog food, raw diets, cat litter & pet products.<br>
-        Updated regularly with new tests.
-      </p>
-      <a href="#latest" class="bg-emerald-500 hover:bg-emerald-600 px-10 py-6 rounded-2xl text-xl font-semibold inline-block">
-        Browse Latest Reviews →
-      </a>
-    </div>
-  </header>
-
-  <!-- Latest Reviews -->
-  <section id="latest" class="py-20 bg-zinc-900">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">Latest Reviews</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Real Review Cards from your content -->
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden hover:ring-2 hover:ring-emerald-500 transition">
-          <div class="h-56 bg-gradient-to-br from-orange-800 to-amber-900 flex items-center justify-center text-7xl">🍖</div>
-          <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">Best Raw Diet Base Mixes</h3>
-            <p class="text-zinc-400 line-clamp-3">Complete comparison and testing of the top raw diet base mixes.</p>
-            <a href="#" class="text-emerald-400 mt-6 inline-block font-medium">Read Full Review →</a>
-          </div>
+    <!-- Hero -->
+    <header class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Honest Reviews.<br><span class="text-emerald-400">Real Results.</span></h1>
+            <p class="text-xl text-zinc-300 max-w-xl mx-auto mb-10">Independent testing of dog food, raw diets, cat litter, toys & more.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="dogs.html" class="bg-emerald-500 hover:bg-emerald-600 px-10 py-4 rounded-2xl font-semibold text-lg">Browse Dog Reviews</a>
+                <a href="cats.html" class="border border-white/60 hover:bg-white/10 px-10 py-4 rounded-2xl font-semibold text-lg">Browse Cat Reviews</a>
+            </div>
         </div>
+    </header>
 
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden hover:ring-2 hover:ring-emerald-500 transition">
-          <div class="h-56 bg-gradient-to-br from-blue-800 to-cyan-900 flex items-center justify-center text-7xl">🥫</div>
-          <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">Best Canned Dog Foods</h3>
-            <p class="text-zinc-400 line-clamp-3">Top 5 canned dog foods tested for nutrition, taste and value.</p>
-            <a href="#" class="text-emerald-400 mt-6 inline-block font-medium">Read Full Review →</a>
-          </div>
+    <section class="py-20 bg-zinc-900 flex-1">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold tracking-tighter mb-12">Latest Reviews</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="reviewGrid"></div>
         </div>
+    </section>
 
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden hover:ring-2 hover:ring-emerald-500 transition">
-          <div class="h-56 bg-gradient-to-br from-purple-800 to-violet-900 flex items-center justify-center text-7xl">🧱</div>
-          <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">Best Cat Litter 2026</h3>
-            <p class="text-zinc-400 line-clamp-3">Low dust, odor control and clumping performance tested.</p>
-            <a href="#" class="text-emerald-400 mt-6 inline-block font-medium">Read Full Review →</a>
-          </div>
-        </div>
+    <div id="footer"></div>
 
-      </div>
-    </div>
-  </section>
+    <script>
+        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
 
+        // Latest reviews from your sitemap
+        const reviews = [
+            {title: "The Ultimate Guide to Choosing the Right Dog Food", url: "dogs.html", rating: "4.8"},
+            {title: "Best Raw Diet Base Mixes 2025", url: "dogs.html", rating: "4.9"},
+            {title: "Grain-Free Cat Food Deep Dive", url: "cats.html", rating: "4.6"},
+        ];
+
+        document.getElementById('reviewGrid').innerHTML = reviews.map(r => `
+            <a href="${r.url}" class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-emerald-500 transition-all">
+                <h3 class="font-semibold text-lg mb-2">${r.title}</h3>
+                <span class="text-emerald-400">${r.rating} ★</span>
+            </a>
+        `).join('');
+    </script>
 </body>
 </html>
