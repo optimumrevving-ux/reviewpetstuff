@@ -14,18 +14,68 @@
         .star { color: #fbbf24; }
     </style>
 </head>
-<body class="tail-container font-sans" data-product-slug="hills-science-diet-adult-1-6">
+<body class="tail-container font-sans" data-product-slug="[slug]">
 
     <div id="navbar"></div>
 
-    <!-- BREADCRUMBS + MAIN CONTENT (same as before) -->
-    <!-- ... keep your existing main content ... -->
+    <!-- BREADCRUMBS -->
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-zinc-500 border-b border-zinc-800">
+        <a href="../index.html" class="hover:text-emerald-400">Home</a> →
+        <a href="../dogs.html" class="hover:text-emerald-400">Dogs</a> →
+        <span class="text-emerald-400">[Category]</span>
+    </div>
 
-    <!-- MID & BOTTOM CTAs will be auto-filled by JS -->
+    <div class="max-w-7xl mx-auto px-6 pt-12 pb-24">
+        <div class="grid lg:grid-cols-12 gap-12">
+
+            <article class="lg:col-span-8 prose prose-invert max-w-none">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-xs font-semibold bg-emerald-950 text-emerald-400 px-4 py-2 rounded-3xl">[CATEGORY TAG]</span>
+                    <span class="text-xs text-zinc-500">Last Updated: May 9, 2026</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-none mb-8">[Full Product Name] Review</h1>
+
+                <!-- Star Rating -->
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="flex text-4xl star">★★★★☆</div>
+                    <div>
+                        <span class="text-3xl font-semibold text-emerald-400">9.4</span>
+                        <span class="text-zinc-400">/ 10</span>
+                    </div>
+                </div>
+
+                <img src="../images/products/[slug].jpg" alt="[Product Name]" class="w-full rounded-3xl mb-12" loading="lazy">
+
+                <!-- Your content goes here (intro, pros/cons, verdict, etc.) -->
+
+                <!-- Mid CTA -->
+                <div class="my-16 bg-zinc-900 border border-emerald-900 rounded-3xl p-8 text-center">
+                    <p class="text-emerald-400 font-semibold mb-4">Ready to buy?</p>
+                    <a href="#" id="mid-cta" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition">
+                        <i class="fas fa-shopping-cart"></i> Check Best Price
+                    </a>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10 text-center">
+                    <p class="text-lg mb-6">Support honest testing</p>
+                    <a href="#" id="bottom-cta" class="inline-flex items-center gap-3 bg-white text-zinc-950 hover:bg-emerald-400 hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition">
+                        <i class="fas fa-arrow-right"></i> Get [Product Name] Now
+                    </a>
+                </div>
+            </article>
+
+            <!-- Sidebar (Quick Facts + Related) -->
+            <aside class="lg:col-span-4 space-y-8">
+                <!-- Your sidebar content -->
+            </aside>
+        </div>
+    </div>
 
     <div id="footer"></div>
 
-    <!-- Component Loader + Smart Affiliate Loader -->
+    <!-- Loaders -->
     <script>
         async function loadComponent(id, file) {
             try {
@@ -38,23 +88,15 @@
         async function loadAffiliateLinks() {
             const slug = document.body.getAttribute('data-product-slug');
             if (!slug) return;
-
             try {
                 const res = await fetch('../products.json');
                 const products = await res.json();
                 const product = products[slug];
                 if (!product) return;
-
-                // Update both CTAs
                 document.querySelectorAll('#mid-cta, #bottom-cta').forEach(link => {
-                    if (product.amazon) {
-                        link.href = product.amazon;
-                        link.innerHTML = `<i class="fas fa-shopping-cart"></i> Check Best Price on Amazon`;
-                    }
+                    if (product.amazon) link.href = product.amazon;
                 });
-            } catch (e) {
-                console.error("Could not load products.json");
-            }
+            } catch (e) { console.error("Affiliate load failed"); }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -62,10 +104,6 @@
             loadComponent('footer', '../components/footer.html');
             loadAffiliateLinks();
         });
-    </script>
-
-    <script>
-        console.log('%c✅ Review template with smart affiliate system loaded', 'color:#10b981; font-weight:bold');
     </script>
 </body>
 </html>
