@@ -4,6 +4,11 @@
     "amazon": "https://amzn.to/YOUR-AMAZON-LINK-HERE",
     "chewy": "https://YOUR-CHEWY-LINK-HERE",
     "note": "Best price usually on Amazon"
+  },
+  "kong-extreme": {
+    "name": "KONG Extreme Dog Toy",
+    "amazon": "https://amzn.to/YOUR-KONG-AMAZON-LINK",
+    "chewy": "https://YOUR-KONG-CHEWY-LINK",
+    "note": "Available in multiple sizes"
   }
-  // Add new products here as you create reviews
 }
