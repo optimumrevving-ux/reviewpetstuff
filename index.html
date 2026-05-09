@@ -31,7 +31,10 @@
         </div>
     </header>
 
+<<<<<<< HEAD
     <!-- Latest Reviews -->
+=======
+>>>>>>> dc20833d711c5ba1b96531c7d32329462e4d78bf
     <section class="py-20 bg-zinc-900 flex-1">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-bold tracking-tighter mb-12">Latest Reviews</h2>
@@ -42,6 +45,7 @@
     <div id="footer"></div>
 
     <script>
+<<<<<<< HEAD
         // Load components
         fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
         fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
@@ -64,6 +68,22 @@
                     <h3 class="font-semibold text-lg leading-tight mb-2 group-hover:text-emerald-400">${r.title}</h3>
                     <div class="text-emerald-400 font-medium">${r.rating} ★</div>
                 </div>
+=======
+        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
+
+        // Latest reviews from your sitemap
+        const reviews = [
+            {title: "The Ultimate Guide to Choosing the Right Dog Food", url: "dogs.html", rating: "4.8"},
+            {title: "Best Raw Diet Base Mixes 2025", url: "dogs.html", rating: "4.9"},
+            {title: "Grain-Free Cat Food Deep Dive", url: "cats.html", rating: "4.6"},
+        ];
+
+        document.getElementById('reviewGrid').innerHTML = reviews.map(r => `
+            <a href="${r.url}" class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 hover:border-emerald-500 transition-all">
+                <h3 class="font-semibold text-lg mb-2">${r.title}</h3>
+                <span class="text-emerald-400">${r.rating} ★</span>
+>>>>>>> dc20833d711c5ba1b96531c7d32329462e4d78bf
             </a>
         `).join('');
     </script>
