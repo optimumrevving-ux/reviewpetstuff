@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hills Science Diet Adult 1-6 Review 2025 - ReviewPetStuff</title>
+    <title>Hill's Science Diet Adult 1-6 Review 2025 - ReviewPetStuff</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -11,8 +11,8 @@
         body { font-family: 'Inter', system-ui, sans-serif; }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col">
-    
+<body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col" data-product-slug="hills-science-diet-adult-1-6">
+
     <div id="navbar"></div>
 
     <main class="flex-1 max-w-4xl mx-auto px-6 py-12">
@@ -32,14 +32,16 @@
             <div class="text-zinc-400">Honest • Independent • Real Dog Tested</div>
         </div>
 
-        <img src="images/products/hills-science-diet-adult.jpg" alt="Hill's Science Diet Adult" 
-             class="w-full rounded-3xl mb-12">
+        <img src="images/products/hills-science-diet-adult.jpg" alt="Hill's Science Diet Adult" class="w-full rounded-3xl mb-12">
 
         <!-- Verdict -->
         <div class="bg-emerald-950 border border-emerald-800 rounded-3xl p-8 mb-12">
             <h2 class="text-2xl font-semibold mb-4">Our Verdict</h2>
             <p class="text-lg">A solid, vet-recommended kibble with good digestibility. Best for healthy adult dogs with no major sensitivities.</p>
         </div>
+
+        <!-- PRIMARY CTA - Mid-article (very strong placement) -->
+        <div id="affiliate-cta-primary" class="mt-12 mb-16 hidden p-10 bg-emerald-950 border border-emerald-800 rounded-3xl"></div>
 
         <!-- Pros / Cons -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
@@ -62,18 +64,14 @@
             </div>
         </div>
 
-        <div class="prose prose-invert max-w-none">
+        <div class="prose prose-invert max-w-none text-zinc-300">
             <h2 class="text-3xl font-bold mb-8">Full Review</h2>
             <p>We tested Hill's Science Diet Adult 1-6 with two medium-sized dogs over 8 weeks...</p>
-            <!-- Add more detailed content here -->
+            <!-- Add your detailed review here -->
         </div>
 
-        <!-- Buy Buttons -->
-        <div class="mt-16 p-10 bg-zinc-900 rounded-3xl border border-emerald-900 text-center">
-            <h3 class="text-2xl font-semibold mb-8">Buy Hill's Science Diet Adult 1-6</h3>
-            <a href="#" class="block w-full bg-emerald-500 hover:bg-emerald-600 py-5 rounded-2xl text-xl font-semibold mb-4">Shop on Amazon</a>
-            <a href="#" class="block w-full border border-zinc-700 hover:bg-zinc-800 py-5 rounded-2xl">Shop on Chewy</a>
-        </div>
+        <!-- SECONDARY CTA - Bottom of article -->
+        <div id="affiliate-cta-secondary" class="mt-20 hidden p-10 bg-zinc-900 rounded-3xl border border-emerald-900"></div>
     </main>
 
     <div id="footer"></div>
@@ -81,6 +79,48 @@
     <script>
         fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
         fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
+
+        async function loadAffiliateCTA() {
+            const slug = document.body.getAttribute('data-product-slug');
+            if (!slug) return;
+            try {
+                const res = await fetch('products.json');
+                const data = await res.json();
+                const product = data[slug];
+                if (!product) return;
+
+                const ctaHTML = `
+                    <h3 class="text-2xl font-semibold mb-2 text-center">Ready to Buy?</h3>
+                    <p class="text-center text-zinc-400 mb-8">Support honest reviews — no extra cost to you</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        ${product.amazon ? `
+                        <a href="${product.amazon}" target="_blank" class="flex items-center justify-center gap-3 bg-[#FF9900] hover:bg-[#FF9900]/90 text-black font-semibold py-5 px-8 rounded-2xl transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Buy on Amazon
+                            ${product.note ? `<span class="text-xs bg-black/20 px-3 py-1 rounded-full">${product.note}</span>` : ''}
+                        </a>` : ''}
+                        
+                        ${product.chewy ? `
+                        <a href="${product.chewy}" target="_blank" class="flex items-center justify-center gap-3 border-2 border-zinc-700 hover:bg-zinc-800 font-semibold py-5 px-8 rounded-2xl transition-all">
+                            <i class="fa-solid fa-paw"></i>
+                            Buy on Chewy
+                        </a>` : ''}
+                    </div>
+                    <p class="text-xs text-center text-zinc-500 mt-8">
+                        As an Amazon Associate & Chewy affiliate we may earn from qualifying purchases. 
+                        <a href="../disclosure.html" class="text-emerald-400 hover:underline">Full Disclosure</a>
+                    </p>
+                `;
+
+                document.getElementById('affiliate-cta-primary').innerHTML = ctaHTML;
+                document.getElementById('affiliate-cta-primary').classList.remove('hidden');
+
+                document.getElementById('affiliate-cta-secondary').innerHTML = ctaHTML;
+                document.getElementById('affiliate-cta-secondary').classList.remove('hidden');
+            } catch(e) {}
+        }
+
+        window.onload = loadAffiliateCTA;
     </script>
 </body>
 </html>
