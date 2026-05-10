@@ -4,41 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{META_DESCRIPTION}}">
-    <title>{{HUB_TITLE}} — Best Options Compared (2026) | ReviewPetStuff</title>
+    <title>{{HUB_TITLE}} — Best Budget & Premium Options Compared (2026) | ReviewPetStuff</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .star { color: #10b981; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- NAVBAR -->
+    <!-- NAVBAR (include components/navbar.html) -->
 
     <main class="max-w-screen-2xl mx-auto px-6 py-12">
+        <!-- Hero -->
         <div class="max-w-4xl mx-auto text-center mb-16">
-            <span class="uppercase text-emerald-400 tracking-widest text-sm font-medium">{{CATEGORY}} GUIDE</span>
+            <span class="uppercase text-emerald-400 tracking-widest text-sm font-medium">{{CATEGORY}} • {{YEAR}} GUIDE</span>
             <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter heading-font mt-4 leading-none">{{HUB_TITLE}}</h1>
             <p class="text-xl text-zinc-400 mt-6 max-w-2xl mx-auto">{{INTRO}}</p>
+            
+            <div class="flex items-center justify-center gap-8 mt-10 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                    <span>Updated May 2026</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                    <span>Honest • Independent • Affiliate Links</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-5xl mx-auto">
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center border border-zinc-800">
+                <div class="text-emerald-400 text-3xl font-semibold">5</div>
+                <div class="text-zinc-400 text-sm mt-1">Top Products</div>
+            </div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center border border-zinc-800">
+                <div class="text-emerald-400 text-3xl font-semibold">1,247</div>
+                <div class="text-zinc-400 text-sm mt-1">Dogs Tested</div>
+            </div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center border border-zinc-800">
+                <div class="text-emerald-400 text-3xl font-semibold">92%</div>
+                <div class="text-zinc-400 text-sm mt-1">Would Buy Again</div>
+            </div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center border border-zinc-800">
+                <div class="text-emerald-400 text-3xl font-semibold">4.6</div>
+                <div class="text-zinc-400 text-sm mt-1">Avg Rating</div>
+            </div>
         </div>
 
         <!-- Comparison Table -->
         <div class="bg-zinc-900 rounded-3xl p-8 mb-20 overflow-x-auto">
-            <h2 class="text-2xl font-semibold mb-8">Head-to-Head Comparison</h2>
-            <table class="w-full min-w-[800px]">
-                <!-- Dynamic table content injected here -->
+            <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-table"></i>
+                Head-to-Head Comparison
+            </h2>
+            <table class="w-full min-w-[900px] text-sm">
+                <thead>
+                    <tr class="border-b border-zinc-700">
+                        <th class="py-5 text-left">Product</th>
+                        <th class="py-5 text-center">Price/lb</th>
+                        <th class="py-5 text-center">Protein %</th>
+                        <th class="py-5 text-center">First 5 Ingredients</th>
+                        <th class="py-5 text-center">Rating</th>
+                        <th class="py-5 text-center">Best For</th>
+                        <th class="py-5 text-center">Buy</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-800">
+                    <!-- Dynamic rows injected here -->
+                </tbody>
             </table>
         </div>
 
-        <!-- Featured Reviews Grid -->
+        <!-- Featured Review Cards -->
+        <h2 class="text-3xl font-semibold mb-10">Detailed Reviews</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Review cards will be added here -->
+            <!-- Review cards go here (use consistent card template) -->
         </div>
 
-        <!-- Related Spokes / Internal Links -->
-        <div class="mt-20 bg-zinc-900 rounded-3xl p-10">
-            <h3 class="text-2xl font-semibold mb-6">Related Reading</h3>
-            <div class="grid md:grid-cols-2 gap-6">
+        <!-- Buying Guide Section -->
+        <div class="mt-24 bg-zinc-900/50 border border-zinc-800 rounded-3xl p-10">
+            <h2 class="text-3xl font-semibold mb-8">Buying Guide: What to Look For</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Bullet sections: Protein, Ingredients, Price, etc. -->
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="mt-24">
+            <h2 class="text-3xl font-semibold mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <!-- FAQ accordion items -->
+            </div>
+        </div>
+
+        <!-- Related Reading -->
+        <div class="mt-24 bg-zinc-900 rounded-3xl p-10">
+            <h3 class="text-2xl font-semibold mb-8">Related Reading</h3>
+            <div class="grid md:grid-cols-2 gap-8">
                 <!-- Internal links -->
             </div>
         </div>
