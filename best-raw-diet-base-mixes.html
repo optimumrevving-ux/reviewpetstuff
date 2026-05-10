@@ -10,7 +10,7 @@
     <style>
         .tail-container { max-width: 1280px; margin: 0 auto; }
         .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover { transform: translateY(-8px); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.15); }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -95,17 +95,84 @@
     <div id="footer"></div>
 
     <script>
+        // Load components
         fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
         fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
 
-        const products = [ /* same 5 products as before - keeping it short for this response */ 
-            { rank:1, title:"Dr. Harvey’s Paradigm Base Mix", rating:"9.6", badge:"Best Overall", price:"$4.80/lb", image:"images/products/dr-harveys-paradigm.jpg", link:"reviews/dr-harveys-paradigm-base-mix.html", summary:"Premium human-grade ingredients." },
-            // ... (other 4 products)
+        const products = [
+            {
+                rank: 1,
+                title: "Dr. Harvey’s Paradigm Base Mix",
+                rating: "9.6",
+                badge: "Best Overall",
+                price: "$4.80/lb",
+                image: "images/products/dr-harveys-paradigm.jpg",
+                link: "reviews/dr-harveys-paradigm-base-mix.html",
+                summary: "Premium human-grade ingredients. Excellent for all life stages."
+            },
+            {
+                rank: 2,
+                title: "Steve's Real Food Turbo Base",
+                rating: "9.3",
+                badge: "Best for Active Dogs",
+                price: "$4.20/lb",
+                image: "images/products/steves-turbo.jpg",
+                link: "reviews/steves-real-food-turbo.html",
+                summary: "High protein, great for working and athletic dogs."
+            },
+            {
+                rank: 3,
+                title: "Primal Raw Freeze-Dried Base",
+                rating: "9.0",
+                badge: "Best Convenience",
+                price: "$5.10/lb",
+                image: "images/products/primal-base.jpg",
+                link: "reviews/primal-raw-base.html",
+                summary: "Easy to portion and rehydrate."
+            },
+            {
+                rank: 4,
+                title: "The Honest Kitchen Preference",
+                rating: "8.8",
+                badge: "Best for Picky Eaters",
+                price: "$4.50/lb",
+                image: "images/products/honest-kitchen.jpg",
+                link: "reviews/honest-kitchen-preference.html",
+                summary: "Gentle on sensitive stomachs."
+            },
+            {
+                rank: 5,
+                title: "BalanceIT Base Mix",
+                rating: "8.7",
+                badge: "Best Budget Option",
+                price: "$3.60/lb",
+                image: "images/products/balanceit.jpg",
+                link: "reviews/balanceit-base-mix.html",
+                summary: "Affordable and veterinarian formulated."
+            }
         ];
 
         function renderProducts() {
             const container = document.getElementById('product-grid');
-            container.innerHTML = products.map(p => `...` /* same card code as previous */).join('');
+            container.innerHTML = products.map(p => `
+                <a href="${p.link}" class="product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="relative">
+                        <img src="${p.image}" alt="${p.title}" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-black/80 text-emerald-400 text-xs font-mono px-3 py-1 rounded-full">${p.rank} • ${p.rating}</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between mb-4">
+                            <span class="bg-emerald-900 text-emerald-400 text-xs px-4 py-1.5 rounded-2xl">${p.badge}</span>
+                            <span class="text-emerald-400 font-medium">${p.price}</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 group-hover:text-emerald-400 transition-colors">${p.title}</h3>
+                        <p class="text-zinc-400 mb-8">${p.summary}</p>
+                        <button class="w-full bg-emerald-600 hover:bg-emerald-500 py-4 rounded-2xl font-medium transition-colors">
+                            Read Full Review →
+                        </button>
+                    </div>
+                </a>
+            `).join('');
         }
 
         window.onload = renderProducts;
