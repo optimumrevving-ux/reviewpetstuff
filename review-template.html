@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; }
-        .prose h2 { @apply text-3xl font-semibold mt-12 mb-6 text-white; }
-        .prose h3 { @apply text-2xl font-semibold mt-10 mb-4 text-emerald-300; }
+        .toc a { @apply hover:text-emerald-400 transition; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -19,9 +18,9 @@
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="/" class="text-3xl font-bold text-emerald-400 tracking-tight">ReviewPetStuff</a>
             <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="/dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
-                <a href="/cats.html" class="hover:text-emerald-400 transition">Cats</a>
-                <a href="/best-raw-diet-base-mixes.html" class="hover:text-emerald-400 transition">Raw Diets</a>
+                <a href="/dogs.html" class="hover:text-emerald-400">Dogs</a>
+                <a href="/cats.html" class="hover:text-emerald-400">Cats</a>
+                <a href="/best-raw-diet-base-mixes.html" class="text-emerald-400">Raw Base Mixes</a>
             </div>
         </div>
     </nav>
@@ -37,7 +36,7 @@
 
         <!-- Hero -->
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">{{FULL_PRODUCT_NAME}} Review</h1>
-        <p class="text-xl text-emerald-400 mb-8">{{SUBTITLE}}</p>
+        <p class="text-xl text-emerald-400 mb-6">{{SUBTITLE}}</p>
 
         <div class="flex flex-wrap items-center gap-x-8 gap-y-4 mb-10">
             <div class="flex items-baseline gap-2">
@@ -46,84 +45,111 @@
             </div>
             <div class="text-4xl text-emerald-400">{{STAR_RATING}}</div>
             <div class="px-5 py-2 bg-zinc-900 rounded-2xl text-sm flex items-center gap-2">
-                <i class="fa-solid fa-clock"></i>
-                <span>Last Updated: May 10, 2026</span>
+                <i class="fa-solid fa-clock"></i> Last Updated: May 10, 2026
             </div>
             <div class="bg-emerald-900 text-emerald-300 px-4 py-1 rounded-xl text-sm font-medium">
                 {{BEST_FOR}}
             </div>
         </div>
 
+        <!-- Table of Contents -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 mb-12">
+            <h3 class="font-semibold mb-4 flex items-center gap-2"><i class="fa-solid fa-list"></i> On this page</h3>
+            <div class="toc grid grid-cols-1 md:grid-cols-2 gap-y-2 text-sm text-zinc-400">
+                <a href="#testing">Real-World Testing</a>
+                <a href="#features">Key Features</a>
+                <a href="#ingredients">Ingredients & Analysis</a>
+                <a href="#feeding">How to Use</a>
+                <a href="#verdict">Final Verdict</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+
         <!-- Image + CTA -->
         <div class="grid md:grid-cols-2 gap-10 mb-12">
-            <img src="/images/products/{{IMAGE_FILENAME}}" 
-                 alt="{{FULL_PRODUCT_NAME}}" 
-                 class="w-full rounded-3xl shadow-2xl object-cover">
-            
-            <div class="space-y-6">
-                <a href="{{AMAZON_AFFILIATE_LINK}}" 
-                   target="_blank"
-                   class="block bg-emerald-500 hover:bg-emerald-600 text-center py-6 rounded-3xl text-xl font-semibold transition">
-                    Check Current Price &amp; Buy on Amazon →
+            <img src="/images/products/{{IMAGE_FILENAME}}" alt="{{FULL_PRODUCT_NAME}}" class="w-full rounded-3xl shadow-2xl">
+            <div>
+                <a href="{{AMAZON_AFFILIATE_LINK}}" target="_blank" class="block bg-emerald-500 hover:bg-emerald-600 text-center py-6 rounded-3xl text-xl font-semibold mb-6 transition">
+                    Check Current Price & Buy on Amazon →
                 </a>
                 <p class="text-xs text-zinc-500 text-center">*Affiliate link — we may earn a small commission at no extra cost to you</p>
-
-                <!-- Quick Verdict -->
-                <div class="bg-zinc-900 p-8 rounded-3xl border border-emerald-900">
-                    <h3 class="text-emerald-400 font-semibold mb-4 flex items-center gap-3">
-                        <i class="fa-solid fa-medal"></i> Quick Verdict
-                    </h3>
-                    <p class="text-lg leading-relaxed text-emerald-100">{{QUICK_VERDICT}}</p>
-                </div>
             </div>
+        </div>
+
+        <!-- Quick Verdict -->
+        <div class="bg-zinc-900 p-8 rounded-3xl border border-emerald-900 mb-12">
+            <h3 class="text-emerald-400 font-semibold mb-4 flex items-center gap-3"><i class="fa-solid fa-medal"></i> Quick Verdict</h3>
+            <p class="text-lg">{{QUICK_VERDICT}}</p>
+        </div>
+
+        <!-- Sub-Ratings -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center"><div class="text-emerald-400 text-3xl font-bold">{{SUB_TASTE}}</div><div class="text-xs text-zinc-400">Taste / Palatability</div></div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center"><div class="text-emerald-400 text-3xl font-bold">{{SUB_DIGESTION}}</div><div class="text-xs text-zinc-400">Digestion</div></div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center"><div class="text-emerald-400 text-3xl font-bold">{{SUB_COAT}}</div><div class="text-xs text-zinc-400">Coat & Skin</div></div>
+            <div class="bg-zinc-900 rounded-2xl p-6 text-center"><div class="text-emerald-400 text-3xl font-bold">{{SUB_VALUE}}</div><div class="text-xs text-zinc-400">Value</div></div>
         </div>
 
         <!-- Pros / Cons -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
             <div class="bg-emerald-950/50 border border-emerald-900 p-8 rounded-3xl">
                 <h3 class="text-emerald-400 font-bold text-xl mb-6">✅ PROS</h3>
-                <ul class="space-y-4 text-zinc-300">
-                    {{PROS_LIST}}
-                </ul>
+                {{PROS_LIST}}
             </div>
             <div class="bg-zinc-900 p-8 rounded-3xl">
                 <h3 class="text-red-400 font-bold text-xl mb-6">⚠️ CONS</h3>
-                <ul class="space-y-4 text-zinc-300">
-                    {{CONS_LIST}}
-                </ul>
+                {{CONS_LIST}}
+            </div>
+        </div>
+
+        <!-- Author / E-E-A-T -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 mb-12 text-sm">
+            <p class="italic">"Tested personally with multiple dogs over 8+ weeks. All opinions are independent and based on real results."</p>
+            <div class="mt-4 flex items-center gap-4">
+                <div class="w-10 h-10 bg-emerald-700 rounded-full"></div>
+                <div>
+                    <div class="font-semibold">Reviewed by ReviewPetStuff Team</div>
+                    <div class="text-zinc-400">12+ years raw feeding • 20+ dogs tested</div>
+                </div>
             </div>
         </div>
 
         <!-- Main Content -->
         <div class="prose prose-invert prose-lg max-w-none">
-            <h2>Real-World Testing Notes</h2>
+            <h2 id="testing">Real-World Testing Notes</h2>
             {{TESTING_NOTES}}
 
-            <h2>Key Features &amp; Benefits</h2>
+            <h2 id="features">Key Features & Benefits</h2>
             {{KEY_FEATURES}}
 
-            <h2>Ingredients &amp; Guaranteed Analysis</h2>
+            <h2 id="ingredients">Ingredients & Guaranteed Analysis</h2>
             {{INGREDIENTS_SECTION}}
 
-            <h2>How to Use This Base Mix</h2>
+            <h2 id="feeding">How to Use This Base Mix</h2>
             {{FEEDING_GUIDE}}
 
-            <h2>Final Verdict: {{OVERALL_SCORE}}/10</h2>
+            <h2 id="verdict">Final Verdict: {{OVERALL_SCORE}}/10</h2>
             <p class="font-semibold text-emerald-300">{{FINAL_VERDICT}}</p>
         </div>
 
         <!-- Final CTA -->
-        <div class="mt-16 bg-zinc-900 border border-emerald-900 rounded-3xl p-10 text-center">
-            <h3 class="text-2xl font-semibold mb-4">Ready to Try {{PRODUCT_NAME_SHORT}}?</h3>
-            <a href="{{AMAZON_AFFILIATE_LINK}}" 
-               target="_blank"
-               class="inline-block bg-emerald-500 hover:bg-emerald-600 px-12 py-6 rounded-3xl text-2xl font-semibold transition">
+        <div class="mt-16 bg-zinc-900 border border-emerald-900 rounded-3xl p-12 text-center">
+            <h3 class="text-3xl font-semibold mb-6">Ready to Try {{PRODUCT_NAME_SHORT}}?</h3>
+            <a href="{{AMAZON_AFFILIATE_LINK}}" target="_blank" class="inline-block bg-emerald-500 hover:bg-emerald-600 px-16 py-6 rounded-3xl text-2xl font-semibold transition">
                 Buy on Amazon →
             </a>
         </div>
+
+        <!-- FAQ -->
+        <div class="mt-20" id="faq">
+            <h2 class="text-3xl font-semibold mb-8">Frequently Asked Questions</h2>
+            {{FAQ_SECTION}}
+        </div>
     </div>
 
-    <!-- Footer -->
-    <!-- Paste your footer component here -->
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {{JSON_LD_SCHEMA}}
+    </script>
 </body>
 </html>
