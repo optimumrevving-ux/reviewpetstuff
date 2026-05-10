@@ -1,109 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Honest review of [PRODUCT NAME] with real testing notes, pros/cons, star rating and buying advice. Updated 2026.">
-    <title>[PRODUCT NAME] Review 2026 • Honest Rating | ReviewPetStuff</title>
-    <link rel="canonical" href="https://reviewpetstuff.com/reviews/[slug].html">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <title>{{PAGE_TITLE}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .tail-container { @apply bg-zinc-950 text-zinc-100; }
-        .emerald-gradient { background: linear-gradient(90deg, #10b981, #14b8a6); }
-        .star { color: #fbbf24; }
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .prose h2 { @apply text-3xl font-semibold mt-12 mb-6 text-white; }
+        .prose h3 { @apply text-2xl font-semibold mt-10 mb-4 text-emerald-300; }
     </style>
 </head>
-<body class="tail-container font-sans" data-product-slug="[slug]">
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- Navbar -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-emerald-400 tracking-tight">ReviewPetStuff</a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="/dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
+                <a href="/cats.html" class="hover:text-emerald-400 transition">Cats</a>
+                <a href="/best-raw-diet-base-mixes.html" class="hover:text-emerald-400 transition">Raw Diets</a>
+            </div>
+        </div>
+    </nav>
 
-    <div id="navbar"></div>
+    <div class="max-w-4xl mx-auto px-6 py-10">
+        <!-- Breadcrumbs -->
+        <nav class="flex text-sm text-zinc-400 mb-8">
+            <a href="/" class="hover:text-emerald-400">Home</a> <span class="px-2">›</span>
+            <a href="/dogs.html" class="hover:text-emerald-400">Dogs</a> <span class="px-2">›</span>
+            <a href="/best-raw-diet-base-mixes.html" class="hover:text-emerald-400">Raw Base Mixes</a> <span class="px-2">›</span>
+            <span class="text-emerald-400">{{PRODUCT_NAME_SHORT}}</span>
+        </nav>
 
-    <!-- BREADCRUMBS -->
-    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-zinc-500 border-b border-zinc-800">
-        <a href="../index.html" class="hover:text-emerald-400">Home</a> →
-        <a href="../dogs.html" class="hover:text-emerald-400">Dogs</a> →
-        <span class="text-emerald-400">[Category]</span>
-    </div>
+        <!-- Hero -->
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">{{FULL_PRODUCT_NAME}} Review</h1>
+        <p class="text-xl text-emerald-400 mb-8">{{SUBTITLE}}</p>
 
-    <div class="max-w-7xl mx-auto px-6 pt-12 pb-24">
-        <div class="grid lg:grid-cols-12 gap-12">
+        <div class="flex flex-wrap items-center gap-x-8 gap-y-4 mb-10">
+            <div class="flex items-baseline gap-2">
+                <span class="text-5xl font-bold text-emerald-400">{{OVERALL_SCORE}}</span>
+                <span class="text-zinc-400">/10</span>
+            </div>
+            <div class="text-4xl text-emerald-400">{{STAR_RATING}}</div>
+            <div class="px-5 py-2 bg-zinc-900 rounded-2xl text-sm flex items-center gap-2">
+                <i class="fa-solid fa-clock"></i>
+                <span>Last Updated: May 10, 2026</span>
+            </div>
+            <div class="bg-emerald-900 text-emerald-300 px-4 py-1 rounded-xl text-sm font-medium">
+                {{BEST_FOR}}
+            </div>
+        </div>
 
-            <article class="lg:col-span-8 prose prose-invert max-w-none">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-xs font-semibold bg-emerald-950 text-emerald-400 px-4 py-2 rounded-3xl">[CATEGORY TAG]</span>
-                    <span class="text-xs text-zinc-500">Last Updated: May 9, 2026</span>
+        <!-- Image + CTA -->
+        <div class="grid md:grid-cols-2 gap-10 mb-12">
+            <img src="/images/products/{{IMAGE_FILENAME}}" 
+                 alt="{{FULL_PRODUCT_NAME}}" 
+                 class="w-full rounded-3xl shadow-2xl object-cover">
+            
+            <div class="space-y-6">
+                <a href="{{AMAZON_AFFILIATE_LINK}}" 
+                   target="_blank"
+                   class="block bg-emerald-500 hover:bg-emerald-600 text-center py-6 rounded-3xl text-xl font-semibold transition">
+                    Check Current Price &amp; Buy on Amazon →
+                </a>
+                <p class="text-xs text-zinc-500 text-center">*Affiliate link — we may earn a small commission at no extra cost to you</p>
+
+                <!-- Quick Verdict -->
+                <div class="bg-zinc-900 p-8 rounded-3xl border border-emerald-900">
+                    <h3 class="text-emerald-400 font-semibold mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-medal"></i> Quick Verdict
+                    </h3>
+                    <p class="text-lg leading-relaxed text-emerald-100">{{QUICK_VERDICT}}</p>
                 </div>
+            </div>
+        </div>
 
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-none mb-8">[Full Product Name] Review</h1>
+        <!-- Pros / Cons -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-emerald-950/50 border border-emerald-900 p-8 rounded-3xl">
+                <h3 class="text-emerald-400 font-bold text-xl mb-6">✅ PROS</h3>
+                <ul class="space-y-4 text-zinc-300">
+                    {{PROS_LIST}}
+                </ul>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-3xl">
+                <h3 class="text-red-400 font-bold text-xl mb-6">⚠️ CONS</h3>
+                <ul class="space-y-4 text-zinc-300">
+                    {{CONS_LIST}}
+                </ul>
+            </div>
+        </div>
 
-                <!-- Star Rating -->
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="flex text-4xl star">★★★★☆</div>
-                    <div>
-                        <span class="text-3xl font-semibold text-emerald-400">9.4</span>
-                        <span class="text-zinc-400">/ 10</span>
-                    </div>
-                </div>
+        <!-- Main Content -->
+        <div class="prose prose-invert prose-lg max-w-none">
+            <h2>Real-World Testing Notes</h2>
+            {{TESTING_NOTES}}
 
-                <img src="../images/products/[slug].jpg" alt="[Product Name]" class="w-full rounded-3xl mb-12" loading="lazy">
+            <h2>Key Features &amp; Benefits</h2>
+            {{KEY_FEATURES}}
 
-                <!-- Your content goes here (intro, pros/cons, verdict, etc.) -->
+            <h2>Ingredients &amp; Guaranteed Analysis</h2>
+            {{INGREDIENTS_SECTION}}
 
-                <!-- Mid CTA -->
-                <div class="my-16 bg-zinc-900 border border-emerald-900 rounded-3xl p-8 text-center">
-                    <p class="text-emerald-400 font-semibold mb-4">Ready to buy?</p>
-                    <a href="#" id="mid-cta" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition">
-                        <i class="fas fa-shopping-cart"></i> Check Best Price
-                    </a>
-                </div>
+            <h2>How to Use This Base Mix</h2>
+            {{FEEDING_GUIDE}}
 
-                <!-- Bottom CTA -->
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10 text-center">
-                    <p class="text-lg mb-6">Support honest testing</p>
-                    <a href="#" id="bottom-cta" class="inline-flex items-center gap-3 bg-white text-zinc-950 hover:bg-emerald-400 hover:text-white px-10 py-5 rounded-2xl font-semibold text-lg transition">
-                        <i class="fas fa-arrow-right"></i> Get [Product Name] Now
-                    </a>
-                </div>
-            </article>
+            <h2>Final Verdict: {{OVERALL_SCORE}}/10</h2>
+            <p class="font-semibold text-emerald-300">{{FINAL_VERDICT}}</p>
+        </div>
 
-            <!-- Sidebar (Quick Facts + Related) -->
-            <aside class="lg:col-span-4 space-y-8">
-                <!-- Your sidebar content -->
-            </aside>
+        <!-- Final CTA -->
+        <div class="mt-16 bg-zinc-900 border border-emerald-900 rounded-3xl p-10 text-center">
+            <h3 class="text-2xl font-semibold mb-4">Ready to Try {{PRODUCT_NAME_SHORT}}?</h3>
+            <a href="{{AMAZON_AFFILIATE_LINK}}" 
+               target="_blank"
+               class="inline-block bg-emerald-500 hover:bg-emerald-600 px-12 py-6 rounded-3xl text-2xl font-semibold transition">
+                Buy on Amazon →
+            </a>
         </div>
     </div>
 
-    <div id="footer"></div>
-
-    <!-- Loaders -->
-    <script>
-        async function loadComponent(id, file) {
-            try {
-                const res = await fetch(file);
-                const html = await res.text();
-                document.getElementById(id).innerHTML = html;
-            } catch (e) { console.error(`Failed to load ${file}`); }
-        }
-
-        async function loadAffiliateLinks() {
-            const slug = document.body.getAttribute('data-product-slug');
-            if (!slug) return;
-            try {
-                const res = await fetch('../products.json');
-                const products = await res.json();
-                const product = products[slug];
-                if (!product) return;
-                document.querySelectorAll('#mid-cta, #bottom-cta').forEach(link => {
-                    if (product.amazon) link.href = product.amazon;
-                });
-            } catch (e) { console.error("Affiliate load failed"); }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadComponent('navbar', '../components/navbar.html');
-            loadComponent('footer', '../components/footer.html');
-            loadAffiliateLinks();
-        });
-    </script>
+    <!-- Footer -->
+    <!-- Paste your footer component here -->
 </body>
 </html>
