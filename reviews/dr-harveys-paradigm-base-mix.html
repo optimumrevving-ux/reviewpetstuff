@@ -15,16 +15,7 @@
 </head>
 <body class="bg-zinc-950 text-zinc-200">
     <!-- Navbar -->
-    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="/" class="text-3xl font-bold text-emerald-400 tracking-tight">ReviewPetStuff</a>
-            <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="/dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
-                <a href="/cats.html" class="hover:text-emerald-400 transition">Cats</a>
-                <a href="/best-raw-diet-base-mixes.html" class="text-emerald-400">Raw Base Mixes</a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar"></div>
 
     <div class="max-w-4xl mx-auto px-6 py-10">
         <!-- Breadcrumbs -->
@@ -202,6 +193,15 @@
       "reviewRating": { "@type": "Rating", "ratingValue": "9.6", "bestRating": "10" },
       "itemReviewed": { "@type": "Product", "name": "Dr. Harvey's Paradigm Base Mix" }
     }
+    </script>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Load navbar and footer components
+        fetch('../components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('../components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
     </script>
 </body>
 </html>

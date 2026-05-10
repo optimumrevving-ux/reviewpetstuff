@@ -17,21 +17,8 @@
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- NAVBAR (paste your existing navbar here or link via components) -->
-    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-x-3">
-                <span class="text-3xl">🐾</span>
-                <span class="text-2xl font-semibold tracking-tighter heading-font text-emerald-400">ReviewPetStuff</span>
-            </a>
-            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="dogs.html" class="hover:text-emerald-400">Dogs</a>
-                <a href="cats.html" class="hover:text-emerald-400">Cats</a>
-                <a href="best-raw-diet-base-mixes.html" class="hover:text-emerald-400">Raw Diets</a>
-                <a href="how-we-rank.html" class="hover:text-emerald-400">How We Rank</a>
-            </div>
-        </div>
-    </nav>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
 
     <main class="max-w-screen-2xl mx-auto px-6 py-12">
         <!-- HERO -->
@@ -193,14 +180,13 @@
         </div>
     </main>
 
-    <!-- FOOTER (paste your existing footer) -->
-    <footer class="bg-black py-16 mt-20">
-        <div class="max-w-screen-2xl mx-auto px-6 text-center text-zinc-500 text-sm">
-            © 2026 ReviewPetStuff • Honest Pet Product Reviews • <a href="disclaimer.html" class="hover:text-zinc-300">Disclosure</a>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+    <div id="footer"></div>
 
     <script>
+        // Load navbar and footer components
+        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
         console.log('%cBest Dog Foods 2026 Hub Loaded', 'color:#10b981; font-family:monospace');
     </script>
 </body>

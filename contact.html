@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- Navbar same -->
+    <!-- Navbar -->
+    <div id="navbar"></div>
 
     <div class="max-w-4xl mx-auto px-6 py-12">
         <h1 class="text-4xl font-bold">Contact Us</h1>
@@ -24,8 +25,12 @@
     </div>
 
     <!-- Full Footer -->
-    <footer class="bg-zinc-900 border-t border-zinc-800 mt-20">
-        <!-- Same footer -->
-    </footer>
+    <div id="footer"></div>
+
+    <script>
+        // Load navbar and footer components
+        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
+    </script>
 </body>
 </html>

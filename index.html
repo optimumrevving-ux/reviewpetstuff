@@ -48,38 +48,7 @@
 </head>
 <body class="bg-zinc-950 text-zinc-200">
     <!-- NAVBAR -->
-    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="px-6 py-5 flex items-center justify-between">
-                <div class="flex items-center gap-x-8">
-                    <a href="index.html" class="flex items-center gap-x-3">
-                        <span class="text-3xl">🐾</span>
-                        <span class="text-2xl font-semibold tracking-tighter heading-font text-emerald-400">ReviewPetStuff</span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="dogs.html" class="nav-link text-zinc-300 hover:text-white">Dogs</a>
-                    <a href="cats.html" class="nav-link text-zinc-300 hover:text-white">Cats</a>
-                    <a href="how-we-rank.html" class="nav-link text-zinc-300 hover:text-white">How We Rank</a>
-                    <a href="about-us.html" class="nav-link text-zinc-300 hover:text-white">About</a>
-                    <a href="contact.html" class="nav-link text-zinc-300 hover:text-white">Contact</a>
-                </div>
-
-                <div class="flex items-center gap-x-4">
-                    <a href="best-raw-diet-base-mixes.html" 
-                       class="hidden sm:flex items-center gap-x-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 rounded-2xl text-sm font-semibold transition-colors">
-                        <i class="fa-solid fa-bone"></i>
-                        <span>Raw Diets</span>
-                    </a>
-                    <button onclick="window.location.href='contact.html'" 
-                            class="px-6 py-3 bg-white text-black rounded-2xl text-sm font-semibold hover:bg-zinc-200 transition-colors">
-                        Get in Touch
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar"></div>
 
     <!-- HERO -->
     <header class="hero-bg pt-16 pb-20">
@@ -216,58 +185,12 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-black pt-16 pb-12">
-        <div class="max-w-screen-2xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-12">
-                <div class="md:col-span-5">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <span class="text-4xl">🐾</span>
-                        <span class="text-3xl font-semibold tracking-tighter heading-font text-emerald-400">ReviewPetStuff</span>
-                    </div>
-                    <p class="text-zinc-400 max-w-md">
-                        Honest pet product reviews.<br>
-                        No fluff. No sponsored rankings.
-                    </p>
-                </div>
-
-                <div class="md:col-span-2">
-                    <h4 class="font-semibold mb-6 text-emerald-400">Dogs</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="dogs.html" class="hover:text-white transition-colors">All Dog Reviews</a></li>
-                        <li><a href="best-raw-diet-base-mixes.html" class="hover:text-white transition-colors">Raw Diet Base Mixes</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-2">
-                    <h4 class="font-semibold mb-6 text-emerald-400">Company</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="how-we-rank.html" class="hover:text-white transition-colors">How We Rank</a></li>
-                        <li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-3">
-                    <div class="bg-zinc-900 rounded-3xl p-6 text-sm">
-                        <p class="text-emerald-400 font-medium mb-2">Ready to improve your pet's diet?</p>
-                        <a href="dogs.html" class="block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3.5 rounded-2xl text-center transition-colors">Browse All Dog Foods →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16 pt-8 border-t border-zinc-800 text-xs text-zinc-500 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div>© 2026 ReviewPetStuff. All rights reserved.</div>
-                <div class="flex gap-x-6">
-                    <a href="disclaimer.html" class="hover:text-zinc-300">Disclosure</a>
-                    <a href="privacy-policy.html" class="hover:text-zinc-300">Privacy</a>
-                    <a href="terms-and-conditions.html" class="hover:text-zinc-300">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <script>
-        // Tailwind script already included via CDN
+        // Load navbar and footer components
+        fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
+        fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
         console.log('%cReviewPetStuff — Honest reviews loaded', 'color:#10b981; font-family:monospace');
     </script>
 </body>
