@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affiliate Disclosure - ReviewPetStuff</title>
+    <meta name="description" content="Affiliate Disclosure - ReviewPetStuff.com">
+    <title>Affiliate Disclosure | ReviewPetStuff</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap'); body { font-family: 'Inter', system-ui, sans-serif; }</style>
+    <style>
+        body { font-family: 'Inter', system_ui, sans-serif; }
+    </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col">
+
     <div id="navbar"></div>
 
-    <main class="flex-1 max-w-3xl mx-auto px-6 py-20 prose prose-invert">
-        <h1 class="text-5xl font-bold tracking-tighter mb-8">Affiliate Disclosure</h1>
-        <p>This site contains affiliate links. We earn a small commission if you purchase through our links at no extra cost to you.</p>
+    <main class="flex-1 max-w-3xl mx-auto px-6 py-20">
+        <h1 class="text-5xl font-bold tracking-tighter mb-8 text-white">Affiliate Disclosure</h1>
+        
+        <div class="prose prose-invert prose-lg">
+            <p class="text-emerald-400 text-sm mb-8">Last Updated: May 10, 2026</p>
+            
+            <p>ReviewPetStuff.com is a participant in various affiliate advertising programs, including Amazon Associates and Chewy Affiliate Program.</p>
+            
+            <p>We earn a small commission from qualifying purchases made through the affiliate links on this website at <strong>no additional cost to you</strong>.</p>
+            
+            <p>All reviews and recommendations are based on our honest testing and research. Affiliate commissions help support the site and allow us to continue publishing independent reviews.</p>
+            
+            <p>We only recommend products we believe are genuinely good for pets and their owners.</p>
+        </div>
     </main>
 
     <div id="footer"></div>
+
     <script>
         fetch('components/navbar.html').then(r => r.text()).then(h => document.getElementById('navbar').innerHTML = h);
         fetch('components/footer.html').then(r => r.text()).then(h => document.getElementById('footer').innerHTML = h);
