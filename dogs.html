@@ -3,94 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best Dog Products 2026 - Honest reviews of raw diets, kibble, toys, dental care & more. Real testing from a multi-dog household.">
-    <title>Best Dog Products 2026 | Honest Reviews & Buying Guides</title>
+    <meta name="description" content="Honest dog product reviews 2026 — best dog foods, raw diet base mixes, toys, dental care & more. Real testing notes, ratings, and affiliate-free recommendations.">
+    <title>Best Dog Products & Reviews 2026 | Honest Raw Food, Kibble & Gear</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .tail-container { max-width: 1280px; margin: 0 auto; }
-        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.25); }
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .card-hover:hover { transform: translateY(-8px); }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- NAVBAR -->
-    <div id="navbar"></div>
-
-    <!-- HERO -->
-    <header class="bg-zinc-900 border-b border-emerald-900">
-        <div class="tail-container px-6 py-20 text-center">
-            <span class="inline-flex items-center gap-2 bg-emerald-950 text-emerald-400 text-sm font-medium px-5 py-2 rounded-3xl mb-6">
-                <i class="fas fa-paw"></i> DOGS PILLAR
-            </span>
-            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-6">Best Dog Products 2026</h1>
-            <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Real-world tested recommendations. Transparent scores and honest verdicts only.</p>
-            <div class="mt-8 text-sm text-zinc-400">Last Updated: May 9, 2026</div>
-        </div>
-    </header>
-
-    <main class="tail-container px-6 py-16">
-        <!-- FEATURED HUB ARTICLE -->
-        <div class="mb-20">
-            <div class="uppercase tracking-widest text-emerald-400 text-sm font-medium mb-4 flex items-center gap-2">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                FEATURED RAW FEEDING GUIDE
+    <!-- Navbar -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-emerald-400 tracking-tight">ReviewPetStuff</a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="/dogs.html" class="text-emerald-400 font-semibold">Dogs</a>
+                <a href="/cats.html" class="hover:text-emerald-400 transition">Cats</a>
+                <a href="/best-raw-diet-base-mixes.html" class="hover:text-emerald-400 transition">Raw Diets</a>
             </div>
-            
-            <a href="best-raw-diet-base-mixes.html" 
-               class="card-hover group block bg-zinc-900 border border-emerald-900/70 hover:border-emerald-500 rounded-3xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-5/12 bg-zinc-800">
-                        <img src="images/products/raw-diet-base-mixes-hero.jpg" 
-                             alt="Best Raw Diet Base Mixes 2026 - Just Add Meat"
-                             class="w-full h-80 md:h-full object-cover transition-transform group-hover:scale-105 duration-700">
-                    </div>
-                    <div class="md:w-7/12 p-10 md:p-14 flex flex-col justify-center">
-                        <span class="inline-block bg-emerald-600 text-white text-xs font-medium px-5 py-2 rounded-2xl mb-6">TOP 5 RANKED • 2026</span>
-                        
-                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6 group-hover:text-emerald-400 transition-colors">
-                            Best Raw Diet Base Mixes 2026
-                        </h2>
-                        <p class="text-xl text-zinc-300 mb-8">
-                            “Just add meat” solutions tested for 6+ weeks with real dogs. Complete nutrition made simple.
-                        </p>
-                        
-                        <div class="inline-flex items-center gap-3 text-emerald-400 font-medium text-lg group-hover:gap-5 transition-all">
-                            Read the Full Guide
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
         </div>
+    </nav>
 
-        <!-- Top Reviewed Products -->
-        <div class="mb-20">
-            <h2 class="text-3xl font-semibold mb-10 flex items-center gap-3">
-                <i class="fas fa-star text-emerald-400"></i> Top Reviewed Products
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="top-reviews"></div>
-        </div>
-
-        <!-- More Guides -->
-        <div>
-            <h2 class="text-3xl font-semibold mb-8">Explore More Dog Guides</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <a href="best-raw-diet-base-mixes.html" class="bg-zinc-900 border border-zinc-800 hover:border-emerald-700 rounded-3xl p-8 card-hover">
-                    <div class="text-5xl mb-4">🥩</div>
-                    <h3 class="text-2xl font-semibold mb-2">Raw Diet Base Mixes</h3>
-                    <p class="text-zinc-400">Top 5 easiest balanced raw feeding solutions</p>
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Hero -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Best Dog Products 2026</h1>
+            <p class="text-2xl text-zinc-400 max-w-3xl mx-auto">Honest, no-fluff reviews of dog food, raw diet base mixes, toys, and gear — tested by real dogs.</p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="/best-raw-diet-base-mixes.html" 
+                   class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-2xl font-semibold text-lg transition">
+                    Explore Raw Diet Base Mixes →
                 </a>
-                <!-- Add more category cards here later -->
             </div>
         </div>
-    </main>
 
-    <!-- FOOTER -->
-    <div id="footer"></div>
+        <!-- Raw Diet Hub Teaser -->
+        <div class="bg-gradient-to-br from-emerald-950 to-zinc-900 border border-emerald-900 rounded-3xl p-10 mb-16">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="md:w-2/3">
+                    <span class="inline-block bg-emerald-500 text-black text-xs font-bold px-4 py-2 rounded-full mb-4">NEW SERIES</span>
+                    <h2 class="text-4xl font-bold mb-4">Best Raw Diet Base Mixes</h2>
+                    <p class="text-xl text-zinc-300">We tested 5 top dehydrated & freeze-dried bases so you don’t have to.</p>
+                    <a href="/best-raw-diet-base-mixes.html" class="mt-6 inline-flex items-center gap-3 text-emerald-400 hover:text-emerald-300 font-medium">
+                        View Full Comparison Table & Reviews →
+                    </a>
+                </div>
+                <div class="md:w-1/3">
+                    <img src="/images/dogs/raw-base-mixes-hero.jpg" alt="Raw Diet Base Mixes" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
 
-    <script>
-        // Load reusable components
-        fetch('components/navbar.html')
-            .then(r => r.text())
-            .then(html => document.get
+        <!-- Top Reviews Grid -->
+        <h2 class="text-3xl font-semibold mb-8">Featured Dog Reviews</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
