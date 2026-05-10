@@ -1,30 +1,32 @@
-<!-- components/navbar.html -->
-<nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-    <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-x-3 group">
-            <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-2xl transition-transform group-hover:scale-110">
-                🐾
+<!DOCTYPE html>
+<html lang="en">
+<nav class="bg-zinc-950 border-b border-zinc-800 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-6">
+        <div class="h-16 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl">🐾</div>
+                <span class="font-semibold tracking-tighter text-2xl">ReviewPetStuff</span>
+            </a>
+
+            <!-- Main Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="/dogs.html" class="hover:text-emerald-400 transition">Dogs</a>
+                <a href="/cats.html" class="hover:text-emerald-400 transition">Cats</a>
+                <a href="/how-we-rank.html" class="hover:text-emerald-400 transition">How We Rank</a>
+                <a href="/about-us.html" class="hover:text-emerald-400 transition">About</a>
+                <a href="/contact.html" class="hover:text-emerald-400 transition">Contact</a>
             </div>
-            <span class="text-2xl font-semibold tracking-tighter text-white">ReviewPetStuff</span>
-        </a>
 
-        <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-            <a href="dogs.html" class="hover:text-emerald-400 transition-colors">Dogs</a>
-            <a href="cats.html" class="hover:text-emerald-400 transition-colors">Cats</a>
-            <a href="how-we-rank.html" class="hover:text-emerald-400 transition-colors">How We Rank</a>
-            <a href="about-us.html" class="hover:text-emerald-400 transition-colors">About</a>
-            <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
-        </div>
-
-        <div class="flex items-center gap-x-4">
-            <a href="/hubs/dog-food/best-dog-foods-2026.html" 
-               class="hidden sm:flex items-center gap-x-2 px-6 py-3 text-sm font-semibold border border-zinc-700 hover:border-emerald-500 rounded-2xl transition-colors">
-                🐶 Best Dog Foods
-            </a>
-            <a href="contact.html" 
-               class="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-2xl text-sm transition-all">
-                Get in Touch
-            </a>
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <a href="/contact.html" 
+                   class="bg-emerald-500 hover:bg-emerald-600 px-6 py-2.5 rounded-2xl font-medium text-sm transition">
+                    Get in Touch
+                </a>
+            </div>
         </div>
     </div>
 </nav>
+</html>
